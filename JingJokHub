@@ -31,6 +31,9 @@ local Window = Rayfield:CreateWindow({
 _G.Kill_Aura = true
 _G.Auto_Next_Island = true
 --Functions
+function Hitbox()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/vkTrolls/Advanced-Hitbox/main/Script"))()
+end
 function RandomRace()
     local args = {
         [1] = "BlackbeardReward",
@@ -243,9 +246,11 @@ end
  local Tab3 = Window:CreateTab("Dungeon")
  local Tab4 = Window:CreateTab("Open Gui Stuff")
  local Tab5 = Window:CreateTab("Teleport World")
+ local Tab6 = Window:CreateTab("Combat")
  local Section = Tab3:CreateSection("Raid")
  local Section = Tab2:CreateSection("BuyRace")
  local Section = Tab1:CreateSection("MainScript")
+ local Section = Tab6:CreateSection("Hitbox")
 
 
 --Buttons
@@ -441,6 +446,13 @@ local Button = Tab1:CreateButton({
     Name = "Random Race",
     Callback = function()
             RandomRace()
+    end,
+})
+
+local Button = Tab1:CreateButton({
+    Name = "Hitbox Extender",
+    Callback = function()
+            Hitbox()
     end,
 })
 --Toggle
