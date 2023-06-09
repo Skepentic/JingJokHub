@@ -29,8 +29,36 @@ local Window = Rayfield:CreateWindow({
 --value
 
 _G.Kill_Aura = true
-
+_G.Auto_Next_Island = true
 --Functions
+function RandomRace()
+    local args = {
+        [1] = "BlackbeardReward",
+        [2] = "Reroll",
+        [3] = "2"
+    }
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+end
+
+function Buyenchantmentdick()
+    while wait() do
+        local args = {
+            [1] = "ColorsDealer",
+            [2] = "2"
+        }
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+    end
+end
+function Buylegendarysword()
+    while wait() do
+        local args = {
+            [1] = "LegendarySwordDealer",
+            [2] = "2"
+        }
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+    end
+end
+
 function Awakeningexpert()
     local args = {
         [1] = "AwakeningChanger",
@@ -214,6 +242,7 @@ end
  local Tab2 = Window:CreateTab("Mics")
  local Tab3 = Window:CreateTab("Dungeon")
  local Tab4 = Window:CreateTab("Open Gui Stuff")
+ local Tab5 = Window:CreateTab("Teleport World")
  local Section = Tab3:CreateSection("Raid")
  local Section = Tab2:CreateSection("BuyRace")
  local Section = Tab1:CreateSection("MainScript")
@@ -370,6 +399,48 @@ local Button = Tab4:CreateButton({
     Name = "Open Awakening Expert",
     Callback = function()
             Awakeningexpert()
+    end,
+})
+
+local Button = Tab2:CreateButton({
+    Name = "Auto Buy Legendary Sword",
+    Callback = function()
+            Buylegendarysword()
+    end,
+})
+
+local Button = Tab2:CreateButton({
+    Name = "Auto Buy Enchantment Color",
+    Callback = function()
+        Buyenchantmentdick()
+    end,
+})
+
+local Button = Tab5:CreateButton({
+    Name = "Teleport to First World",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelMain")
+    end,
+})
+
+local Button = Tab5:CreateButton({
+    Name = "Teleport to Second World",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelDressrosa")
+    end,
+})
+
+local Button = Tab5:CreateButton({
+    Name = "Teleport to Third World",
+    Callback = function()
+		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelZou")
+    end,
+})
+
+local Button = Tab1:CreateButton({
+    Name = "Random Race",
+    Callback = function()
+            RandomRace()
     end,
 })
 --Toggle
